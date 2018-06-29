@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0/EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="VO.PostVO" table="Post">
+<id name="postId" type="int" column="postId">
+<generator class="increment"></generator>
+</id>
+<many-to-one name="areaVO" class="VO.AreaVO">
+<column name="areaId"></column>
+</many-to-one>
+
+<many-to-one name="cityVO" class="VO.CityVO">
+<column name="cityId"></column>
+</many-to-one>
+<many-to-one name="stateVO" class="VO.StateVO">
+<column name="stateId"></column>
+</many-to-one>
+<many-to-one name="countryVO" class="VO.CountryVO">  
+<column name="countryId"></column>
+</many-to-one>
+<many-to-one name="loginVO" class="VO.LoginVO">  
+<column name="loginId"></column>
+</many-to-one>
+<property name="desc">
+			<column name="postdescription" />
+		</property>
+<property name="count">
+			<column name="count" />
+		</property>
+</class>
+</hibernate-mapping>

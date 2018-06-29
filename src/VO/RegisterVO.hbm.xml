@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0/EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<class name="VO.RegisterVO" table="Register">
+
+<id name="registerId" type="int" column="registerId">
+			<generator class="increment" />
+		</id>
+		
+		<property name="firstName">
+			<column name="firstName" />
+		</property>
+		
+		<property name="lastName">
+			<column name="lastName" />
+		</property>
+		
+		<many-to-one name="countryVO" class="VO.CountryVO">
+			<column name="countryId" />
+		</many-to-one>
+		
+		<many-to-one name="stateVO" class="VO.StateVO">
+			<column name="stateId" />
+		</many-to-one>
+		
+		<many-to-one name="cityVO" class="VO.CityVO">
+			<column name="cityId" />
+		</many-to-one>
+		
+		<many-to-one name="areaVO" class="VO.AreaVO">
+			<column name="areaId" />
+		</many-to-one>
+		
+		
+		
+			
+		<property name= "address">
+			<column name="address" />
+		</property>
+		
+			<property name= "gender">
+			<column name="gender" />
+		</property>
+		
+			<property name= "emailId">
+			<column name="emailId" />
+		</property>
+		
+			
+		
+			<property name= "userName">
+			<column name="userName" />
+		</property>
+		
+		<property name= "password">
+			<column name="password" />
+		</property>
+		
+		
+		
+		
+	
+		
+	</class>
+</hibernate-mapping>
